@@ -1,0 +1,35 @@
+
+.input {
+  background: var(--gray-500);
+  color: var(--gray-300);
+  border-radius: 8px;
+  padding: 1rem;
+  width: 39.875rem;
+  margin-right: 0.5rem;
+  border: 1px solid var(--gray-700);
+}
+
+.div {
+  margin-top: -1.6875rem;
+  width: 46rem;
+  display: flex;
+}
+
+.button {
+  height: 3.375rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background: var(--blue-dark);
+  color: var(--gray-100);
+  border: 1px solid var(--blue-dark);
+  display: flex;
+  gap: 8px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.button:hover {
+  background: var(--blue);
+  transition: 0.3s;
+}
