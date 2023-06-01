@@ -14,5 +14,5 @@
   display: flex;
   flex-direction: column;
   background: var(--gray-600);
-  height: max-content;
+  /* height: max-content; */
 }
