@@ -28,16 +28,18 @@ function App() {
 
 
   return (
-    <main>
-      <div className={styles.header}>
-        <header><img src={toDoLogo} alt="logomarca"/></header>
-      </div>
+    <div>
+        <header className={styles.header}>
+          <img src={toDoLogo} alt="logomarca"/>
+        </header>
       
       <div className={styles.tasks}>
-        <InputTask handleNewTask={handleNewTask}/>
-        <TaskList currentTasks={currentTasks} setCurrentTasks={setCurrentTasks}/>
+        <div className={styles.wrapper}>
+          <InputTask handleNewTask={handleNewTask}/>
+          <TaskList currentTasks={currentTasks} setCurrentTasks={setCurrentTasks}/>
+        </div>
       </div>
-    </main>
+    </div>
   )
 }
 

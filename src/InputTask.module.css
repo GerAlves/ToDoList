@@ -4,15 +4,21 @@
   color: var(--gray-300);
   border-radius: 8px;
   padding: 1rem;
-  width: 39.875rem;
+  width: 100%;
+  max-width: 39.875rem;
   margin-right: 0.5rem;
   border: 1px solid var(--gray-700);
 }
 
 .div {
   margin-top: -1.6875rem;
-  width: 46rem;
   display: flex;
+}
+
+@media (min-width: 769px) {
+  .div {
+  width: 46rem;
+  }
 }
 
 .button {

@@ -2,6 +2,7 @@ import styles from './TaskList.module.css'
 import { Trash } from 'phosphor-react'
 import { taskProps } from './App';
 import { useState } from 'react'
+import clipboard from './assets/Clipboard.svg'
 
 interface TaskListProps {
   currentTasks: taskProps[];
@@ -25,9 +26,11 @@ export function TaskList(props : TaskListProps) {
     })
   }
 
-  function removeTask( id: number) {
+  function removeTask( id: number, checked: boolean) {
     const updatedTasks = props.currentTasks.filter(task => task.id !== id)
-    console.log(updatedTasks)
+    if(checked){
+      setConcludedTasks(concludedTasks - 1)
+    }
     props.setCurrentTasks(updatedTasks)
   }
 
@@ -41,7 +44,7 @@ export function TaskList(props : TaskListProps) {
         <span className={styles.tasksInfoSpan2}>
           Concluídas
           <span className={styles.tasksInfoSpan}>{concludedTasks} de {props.currentTasks.length ? props.currentTasks.length : 0}</span>
-          </span>
+        </span>
       </div>
       <div className={styles.tasks}>
         <div className={styles.taskBox}>
@@ -49,8 +52,15 @@ export function TaskList(props : TaskListProps) {
             <div>
             <input key={task.id} type='checkbox' className={styles.customCheckbox} defaultChecked={task.checked} onClick={() => checkmarkTask(task.id)}/>
             <p>{task.content}</p> 
-            <button onClick={() => removeTask(task.id)}><Trash /></button>
+            <button onClick={() => removeTask(task.id, task.checked)}><Trash /></button>
           </div>
+          )}
+          {!props.currentTasks.length && (
+            <article className={styles.emptyTasks}>
+              <img src={clipboard}></img>
+              <strong>Você ainda não tem tarefas cadastradas</strong>
+              <span>Crie tarefas e organize seus itens a fazer</span>
+            </article>
           )}
         </div>
       </div>

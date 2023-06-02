@@ -3,7 +3,6 @@
   color: var(--blue);
   justify-content: space-between;
   display: flex;
-  width: 46rem;
 
   font-size: 0.875rem;
   font-weight: 700;
@@ -130,4 +129,21 @@ align-self: center;
 .customCheckbox:checked:hover + p:before {
   background-image: url('./assets/checked-circle-hover.svg');
   transition: 0.2s;
+}
+
+.emptyTasks {
+  padding-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--gray-300);
+  gap: 0.25rem;
+  font-size: 1rem;
+}
+
+.emptyTasks img {
+  width: 3.5rem;
+  height: 3.5rem;
+  margin-bottom: 0.75rem;
 }

@@ -8,11 +8,21 @@
   width: 100%;
 }
 
-
 .tasks {
   align-items: center;
   display: flex;
   flex-direction: column;
   background: var(--gray-600);
-  /* height: max-content; */
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 87.5%;
+  }
+
+  .wrapper {
+    grid-template-columns: 1fr;
+    width: 85%;
+  }
 }
